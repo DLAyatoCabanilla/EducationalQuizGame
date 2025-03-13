@@ -1,0 +1,528 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns="http://www.example.org/quiz#"
+         xml:base="http://www.example.org/quiz#">
+
+    <owl:Ontology rdf:about="http://www.example.org/quiz"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://www.example.org/quiz#Quiz"/>
+    <owl:Class rdf:about="http://www.example.org/quiz#Question"/>
+    <owl:Class rdf:about="http://www.example.org/quiz#Option"/>
+    <owl:Class rdf:about="http://www.example.org/quiz#Answer"/>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.example.org/quiz#hasQuestion">
+        <rdfs:domain rdf:resource="http://www.example.org/quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.example.org/quiz#Question"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/quiz#hasOption">
+        <rdfs:domain rdf:resource="http://www.example.org/quiz#Question"/>
+        <rdfs:range rdf:resource="http://www.example.org/quiz#Option"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/quiz#hasCorrectAnswer">
+        <rdfs:domain rdf:resource="http://www.example.org/quiz#Question"/>
+        <rdfs:range rdf:resource="http://www.example.org/quiz#Answer"/>
+    </owl:ObjectProperty>
+
+    <!-- Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.example.org/quiz#questionText">
+        <rdfs:domain rdf:resource="http://www.example.org/quiz#Question"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/quiz#optionText">
+        <rdfs:domain rdf:resource="http://www.example.org/quiz#Option"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/quiz#answerValue">
+        <rdfs:domain rdf:resource="http://www.example.org/quiz#Answer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+    <!-- Quiz Instance -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Quiz1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Quiz"/>
+        <!-- Linking all questions to the quiz -->
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q1"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q2"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q3"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q4"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q5"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q6"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q7"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q8"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q9"/>
+        <hasQuestion rdf:resource="http://www.example.org/quiz#Q10"/>
+    </owl:NamedIndividual>
+
+    <!-- Questions, Options, and Answers -->
+    
+    <!-- Question 1 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Which component of a computer is responsible for performing arithmetic and logical operations?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt1_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt1_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt1_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt1_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt1_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Central Processing Unit (CPU)
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt1_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Random Access Memory (RAM)
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt1_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Hard Disk Drive (HDD)
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt1_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Graphics Processing Unit (GPU)
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Repeat for Q2 to Q10 with respective options and answers -->
+    <!-- Question 2 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Which type of software is designed to help users perform specific tasks, such as word processing or spreadsheet calculations?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt2_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt2_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt2_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt2_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans2"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt2_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            System software
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt2_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Application software
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt2_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Firmware
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt2_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Middleware
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 3 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Which input device is used to capture images of documents and convert them into digital form?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt3_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt3_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt3_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt3_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans3"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt3_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Scanner
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt3_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Keyboard
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt3_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Mouse
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt3_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Microphone
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 4 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            What does the acronym USB stand for?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt4_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt4_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt4_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt4_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans4"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt4_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Universal Serial Bus
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt4_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            United States of America Broadcasting
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt4_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Ultra-Sensitive Battery
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt4_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            User-Specific Bitrate
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 5 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q5">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            What is the maximum number of characters that can be used in a file name in Windows operating system?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt5_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt5_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt5_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt5_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans5"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt5_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            64
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt5_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            128
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt5_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            256
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt5_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            512
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans5">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 6 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q6">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Which technology allows a computer to share resources, such as files and printers, with other computers on a network?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt6_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt6_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt6_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt6_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans6"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt6_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Wi-Fi
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt6_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Bluetooth
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt6_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Ethernet
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt6_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            HTTP
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans6">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 7 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q7">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            What is the function of a firewall in a computer system?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt7_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt7_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt7_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt7_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans7"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt7_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            To protect against viruses and malware
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt7_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            To prevent unauthorized access to a network
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt7_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            To manage network traffic
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt7_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            To improve the performance of the system
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans7">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 8 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q8">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Which programming language is used to develop web applications?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans8"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Java
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Python
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            JavaScript
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            C++
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans8">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 9 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q9">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            What is the default file extension for Microsoft Word documents?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt8_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans8"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            .doc
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            .docx
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            txt
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt8_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            pdf
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans8">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</answerValue>
+    </owl:NamedIndividual>
+
+    <!-- Question 10 -->
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Q10">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Question"/>
+        <questionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Chat-GPT is a new application of which tech major?
+        </questionText>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt10_1"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt10_2"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt10_3"/>
+        <hasOption rdf:resource="http://www.example.org/quiz#Opt10_4"/>
+        <hasCorrectAnswer rdf:resource="http://www.example.org/quiz#Ans10"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt10_1">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Google
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt10_2">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            Meta
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt10=3">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            JavaScript
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Opt10_4">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Option"/>
+        <optionText rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+            C++
+        </optionText>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/quiz#Ans10">
+        <rdf:type rdf:resource="http://www.example.org/quiz#Answer"/>
+        <answerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</answerValue>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
